@@ -10,15 +10,14 @@ class QrCodeController extends Controller
     public function index()
     {
         $urls = QRCode::all();
-        return view('qrcode');
+        $recent = \App\Models\QRCode::latest()->pluck('url')->first();
+        return view('qrcode', ['recent' => $recent]);
     }
-
     public function store(Request $request)
     {
         $qrCode = new QRCode();
         $qrCode->url = $request->url;
         $qrCode->save();
-
         return redirect('qrcode');
     }
 }

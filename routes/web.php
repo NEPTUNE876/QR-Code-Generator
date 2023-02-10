@@ -20,3 +20,8 @@ Route::get('/', function () {
 Route::get('qrcode', [\App\Http\Controllers\QrCodeController::class, 'index'])->name('qrcode');
 
 Route::post('save', [\App\Http\Controllers\QrCodeController::class, 'store'])->name('save');
+
+Route::get('test', function () {
+    \Illuminate\Support\Facades\Artisan::call('test:command');
+//    dd("Command has been ran");
+});

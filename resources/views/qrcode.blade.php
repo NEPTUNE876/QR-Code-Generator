@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <title>QR Code Generator</title>
@@ -20,7 +19,7 @@
             <h2>Simple QR Code</h2>
         </div>
         <div class="card-body">
-            {!! QrCode::size(300)->generate('https://google.com') !!}
+            {!! QrCode::size(300)->generate($recent) !!}
         </div>
     </div>
 </div>
